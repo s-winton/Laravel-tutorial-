@@ -1,6 +1,6 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PagesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,9 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+/*Route::get('/', function () {
     return view('welcome');
-});
+});*/
 
 //tell laravel explicitly where to look for the controller 
-Route::get("/site","App\Http\Controllers\Test@index");
+Route::get("/",[PagesController::class, 'index']);
+
+Route::get("about",[PagesController::class, 'about']);

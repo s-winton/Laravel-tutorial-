@@ -7,6 +7,6 @@
     <title>Document</title>
 </head>
 <body>
-    <h1> I hope this works!</h1>
+    <p> this is the about page </p>
 </body>
 </html>
