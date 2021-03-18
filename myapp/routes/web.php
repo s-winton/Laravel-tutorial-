@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\PagesController;
 
+use App\Http\Controllers\TodosController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,3 +20,19 @@ use App\Http\Controllers\PagesController;
 Route::get("/","App\Http\Controllers\PagesController@index");
 
 Route::get("/about","App\Http\Controllers\PagesController@about");
+
+
+Route::get('/todos','App\Http\Controllers\TodosController@index');
+
+Route::get('/create','App\Http\Controllers\TodosController@create');
+
+Route::post('/todos','App\Http\Controllers\TodosController@store'); 
+
+Route::get('/todos/{id}','App\Http\Controllers\TodosController@show');
+
+Route::get('/todos/{id}/edit','App\Http\Controllers\TodosController@edit');
+
+Route::put('/todos/{id}','App\Http\Controllers\TodosController@update');
+
+Route::delete('/todos/{id}','App\Http\Controllers\TodosController@destroy');
+
