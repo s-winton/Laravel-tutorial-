@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\PagesController;
+use App\Http\Controllers\TodosController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,5 +17,6 @@ use App\Http\Controllers\PagesController;
 
 //tell laravel explicitly where to look for the controller 
 Route::get("/","App\Http\Controllers\PagesController@index");
-
 Route::get("/about","App\Http\Controllers\PagesController@about");
+
+Route::resource('/todos_index', TodosController::class);
