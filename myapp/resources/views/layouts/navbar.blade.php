@@ -19,7 +19,7 @@
             <!-- Right Side Of Navbar -->
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a href="/todos_index" class="nav-link">Todos</a>
+                    <a href="/todos" class="nav-link">Todos</a>
                 </li>
                 <li class="nav-item">
                     <a href="/todos.create" class="nav-link">New Todos</a>

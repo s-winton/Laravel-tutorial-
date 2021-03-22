@@ -19,4 +19,4 @@ use App\Http\Controllers\TodosController;
 Route::get("/","App\Http\Controllers\PagesController@index");
 Route::get("/about","App\Http\Controllers\PagesController@about");
 
-Route::resource('/todos_index', TodosController::class);
+Route::resource('todos', TodosController::class);
