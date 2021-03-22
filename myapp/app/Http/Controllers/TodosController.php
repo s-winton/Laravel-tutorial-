@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-
 use App\Models\Todo;
 
 class TodosController extends Controller
@@ -59,9 +58,9 @@ class TodosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Todo $post)
     {
-        //
+        return view('todos.edit', ['post' => $post]);
     }
 
     /**
@@ -71,9 +70,9 @@ class TodosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Todo $post)
     {
-        //
+        dd($request->all());
     }
 
     /**
