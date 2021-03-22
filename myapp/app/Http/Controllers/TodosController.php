@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+
 use App\Models\Todo;
 
 class TodosController extends Controller
@@ -15,7 +16,9 @@ class TodosController extends Controller
      */
     public function index()
     {
-        dd(Todo::all());
+        $posts = Todo::all();
+
+        return view('todos.index', ['posts' => $posts]);
     }
 
     /**
