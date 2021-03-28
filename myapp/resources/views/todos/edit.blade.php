@@ -3,7 +3,7 @@
 @section('content')
    <P>Edit</P>
 
-    <form method="POST" action="/todos{{ $post->id }}">
+    <form method="POST" action="/todos/{{ $post->id }}">
     
         @method('PUT')
 

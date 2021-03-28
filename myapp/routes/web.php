@@ -20,6 +20,7 @@ Route::get("/","App\Http\Controllers\PagesController@index");
 Route::get("/about","App\Http\Controllers\PagesController@about");
 
 
+
 Route::get('/todos', [TodosController::class, 'index']);
 
 Route::get('/todos/{post}/edit', [TodosController::class, 'edit']);
