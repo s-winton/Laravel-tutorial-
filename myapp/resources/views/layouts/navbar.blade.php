@@ -25,7 +25,7 @@
                     <a href="/todos/{{ $post->id }}/edit" class="nav-link">Edit Todos</a>
                 </li>
                 <li class="nav-item">
-                    <a href="/todos.create" class="nav-link">New Todos</a>
+                    <a href="/todos/create" class="nav-link">New Todos</a>
                 </li>
             </ul>
         </div>

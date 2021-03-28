@@ -23,6 +23,11 @@ Route::get("/about","App\Http\Controllers\PagesController@about");
 
 Route::get('/todos', [TodosController::class, 'index']);
 
+Route::get('/todos/create', [TodosController::class, 'create']);
+
+Route::post('/todos', [TodosController::class, 'store']);
+
+
 Route::get('/todos/{post}/edit', [TodosController::class, 'edit']);
 
 Route::put('/todos/{post}', [TodosController::class, 'update']);

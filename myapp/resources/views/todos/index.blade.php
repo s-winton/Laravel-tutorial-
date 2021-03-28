@@ -5,7 +5,7 @@
 
    @foreach ($posts as $post)
        
-      <h2>{{ $post->title }}</h2>
+      <a href="/todos/{{ $post->id }}/edit">{{ $post->title }}</a>
 
       <p>{{ $post->body }}</p>
    @endforeach
