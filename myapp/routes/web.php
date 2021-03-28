@@ -19,4 +19,9 @@ use App\Http\Controllers\TodosController;
 Route::get("/","App\Http\Controllers\PagesController@index");
 Route::get("/about","App\Http\Controllers\PagesController@about");
 
-Route::resource('todos', TodosController::class);
+
+Route::get('/todos', [TodosController::class, 'index']);
+
+Route::get('/todos/{post}/edit', [TodosController::class, 'edit']);
+
+Route::put('/todos/{post}', [TodosController::class, 'update']);

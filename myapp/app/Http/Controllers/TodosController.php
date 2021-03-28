@@ -72,7 +72,22 @@ class TodosController extends Controller
      */
     public function update(Todo $post)
     {
-        dd($request->all());
+
+        request()->validate([
+
+            'title' => 'required',
+
+            'title' => 'required'
+        ]);
+
+        $post->update([
+
+            'title' => request('title'),
+
+            'body' => request('body'),
+        ]);
+
+        return redirect('/todos');
     }
 
     /**
