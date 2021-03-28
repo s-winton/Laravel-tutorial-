@@ -17,6 +17,15 @@
         <textarea id="content" name="body">{{ $post->body }}</textarea>
         <br>
         <button>update</button>
+
+        <form action="todos/{{ $post->id }}">
+        
+            @csrf
+
+            @method('DELETE')
+        
+            <button>delete</button>
+        </form>
     </form>
 
 @endsection
