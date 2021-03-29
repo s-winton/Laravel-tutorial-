@@ -9,5 +9,4 @@
 
       <p>{{ $post->body }}</p>
    @endforeach
-
 @endsection

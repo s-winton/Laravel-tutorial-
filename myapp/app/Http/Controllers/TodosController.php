@@ -28,6 +28,7 @@ class TodosController extends Controller
     public function create(Todo $post)
     {
         return view('todos.create', ['post' => $post]);
+      
     }
 
     /**
@@ -72,6 +73,7 @@ class TodosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
     public function edit(Todo $post)
     {
         return view('todos.edit', ['post' => $post]);
@@ -84,6 +86,7 @@ class TodosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
     public function update(Todo $post)
     {
 
