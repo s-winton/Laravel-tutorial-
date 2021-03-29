@@ -3,7 +3,6 @@
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\TodosController;
 
-use App\Http\Controllers\TodosController;
 
 /*
 |--------------------------------------------------------------------------
