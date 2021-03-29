@@ -7,8 +7,8 @@ use App\Models\Todo;
 
 class PagesController extends Controller
 {
-    function index(Todo $post){
-        return view('pages.index', ['post' => $post]);
+    function home(Todo $post){
+        return view('pages.home', ['post' => $post]);
     }
 
     function about(Todo $post){

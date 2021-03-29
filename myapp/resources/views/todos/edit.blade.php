@@ -18,14 +18,9 @@
         <br>
         <button>update</button>
 
-        <form action="todos/{{ $post->id }}">
-        
-            @csrf
-
-            @method('DELETE')
-        
-            <button>delete</button>
-        </form>
+        <button><a href="/click_delete/{{ $post->id }}">Delete</a></button>
+ 
     </form>
 
+    
 @endsection
