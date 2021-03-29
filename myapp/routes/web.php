@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\PagesController;
+use App\Http\Controllers\TodosController;
 
 use App\Http\Controllers\TodosController;
 
@@ -17,22 +18,15 @@ use App\Http\Controllers\TodosController;
 
 
 //tell laravel explicitly where to look for the controller 
-Route::get("/","App\Http\Controllers\PagesController@index");
-
+Route::get("/","App\Http\Controllers\PagesController@home");
 Route::get("/about","App\Http\Controllers\PagesController@about");
 
 
-Route::get('/todos','App\Http\Controllers\TodosController@index');
-
-Route::get('/create','App\Http\Controllers\TodosController@create');
-
-Route::post('/todos','App\Http\Controllers\TodosController@store'); 
-
-Route::get('/todos/{id}','App\Http\Controllers\TodosController@show');
-
-Route::get('/todos/{id}/edit','App\Http\Controllers\TodosController@edit');
-
-Route::put('/todos/{id}','App\Http\Controllers\TodosController@update');
-
-Route::delete('/todos/{id}','App\Http\Controllers\TodosController@destroy');
+Route::get('/todos', [TodosController::class, 'index']);
+Route::get('/todos/create', [TodosController::class, 'create']);
+Route::post('/todos', [TodosController::class, 'store']);
+Route::get('/todos/{post}/edit', [TodosController::class, 'edit']);
+Route::put('/todos/{post}', [TodosController::class, 'update']);
+Route::get('click_delete/{post}', [TodosController::class, 'delete']);
+//Route::delete('/todos/{post}', [TodosController::class, 'destroy']);
 

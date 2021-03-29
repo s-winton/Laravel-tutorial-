@@ -15,10 +15,9 @@ class TodosController extends Controller
      */
     public function index()
     {
-            $todos = Todo::orderBy('created_at','desc')->paginate(8);
-            return view('todos.index',[
-            'todos' => $todos,
-        ]);
+        $posts = Todo::all();
+
+        return view('todos.index', ['posts' => $posts]);
     }
 
     /**
@@ -26,9 +25,9 @@ class TodosController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Todo $post)
     {
-        
+        return view('todos.create', ['post' => $post]);
     }
 
     /**
@@ -39,7 +38,21 @@ class TodosController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        request()->validate([
+
+            'title' => 'required',
+
+            'title' => 'required'
+        ]);
+
+        Todo::create([
+
+            'title' => request('title'),
+
+            'body' => request('body'),
+        ]);
+
+        return redirect('/todos');
     }
 
     /**
@@ -59,9 +72,9 @@ class TodosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Todo $post)
     {
-        //
+        return view('todos.edit', ['post' => $post]);
     }
 
     /**
@@ -71,9 +84,24 @@ class TodosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Todo $post)
     {
-        //
+
+        request()->validate([
+
+            'title' => 'required',
+
+            'title' => 'required'
+        ]);
+
+        $post->update([
+
+            'title' => request('title'),
+
+            'body' => request('body'),
+        ]);
+
+        return redirect('/todos');
     }
 
     /**
@@ -82,8 +110,17 @@ class TodosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function delete(Todo $post)
     {
-        //
+        $post->delete();
+
+        return redirect('/todos');
+    }
+
+    public function destroy(Todo $post)
+    {
+        $post->delete();
+
+        return redirect('/todos');
     }
 }
